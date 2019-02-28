@@ -23,6 +23,21 @@ dict1.keys() #returns a list having the keys in the dictionary as elements
 dict1.values() #returns a list having the values in the dictionary as elements
  
 dict1.items() #returns a list of tuples, each tuple containing the key and value of each dictionary pair
+
+>>> for k,v in dict1.items():
+...   print("key is: ",k)
+...   print("Value is: ", v)
+...
+key is:  Vendor
+Value is:  Cisco
+key is:  Model
+Value is:  2600
+key is:  Ports
+Value is:  4
+key is:  IOS
+Value is:  12.3
+
+
  
 #Conversions between data types
 str() #converting to a string
