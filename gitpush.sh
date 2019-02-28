@@ -22,12 +22,10 @@
 
 #$ git push origin master
 # Pushes the changes in your local repository up to the remote repository you specified
-$USER  = "anchaubey"
-$PASS = "Mummayou@345"
 
 git add . 
 git commit -m "Add existing file"
 git push origin master <<EOF
-quote USER $USER 
-quote PASS $PASS 
+anchaubey
+Mummayou@345
 EOF 
