@@ -1,0 +1,127 @@
+>>> my_string = '''this\
+is\
+my\
+first\
+string'''
+
+>>> a = "Cisco Switch"
+>>> a.index("i")
+1
+
+a.count("i")
+a.find("sco")
+
+
+>>> a.lower()
+'cisco switch'
+>>> a.upper()
+'CISCO SWITCH'
+
+>>> a.startswith("C")
+True
+>>> a.endswith("G")
+False
+
+>>> c.split("$")
+['', '', '', 'Cisco Switch', '', '', '']
+>>> c.strip("$")
+'Cisco Switch'
+
+>>> b = '   Cisco Switch  '
+>>> b
+'   Cisco Switch  '
+>>> b.replace(" ","")
+'CiscoSwitch'
+
+>>> d = "Cisco,Juniper,HP,Avaya,Nortel"
+>>> d.split(",")
+['Cisco', 'Juniper', 'HP', 'Avaya', 'Nortel']
+
+
+>>> a
+'Cisco Switch'
+>>> "_".join(a)
+'C_i_s_c_o_ _S_w_i_t_c_h'
+>>> 
+
+>>> x = "Cisco"
+>>> y = " Swtich"
+>>> x + y
+'Cisco Swtich'
+>>> x * 3
+'CiscoCiscoCisco'
+
+>>> "o" in x
+
+>>> "b" not in x
+True
+>>> 
+
+>>> "Cisco model: %s, %d WAN slots, IOS %f" % ("2600XM", 2, 12.4)
+'Cisco model: 2600XM, 2 WAN slots, IOS 12.400000'
+
+>>> "Cisco model: %s, %d WAN slots, IOS %.2f" % ("2600XM", 2, 12.4)
+'Cisco model: 2600XM, 2 WAN slots, IOS 12.40'
+
+
+>>> "Cisco model: %s, %d WAN slots, IOS %.f" % ("2600XM", 2, 12.4)
+'Cisco model: 2600XM, 2 WAN slots, IOS 12'
+
+>>> "Cisco model: {}, {} WAN slots, IOS {}".format("2600XM", 2, 12.4)
+'Cisco model: 2600XM, 2 WAN slots, IOS 12.4'
+
+>>> "Cisco model: {2}, {0} WAN slots, IOS {1}".format("2600XM", 2, 12.4)
+'Cisco model: 12.4, 2600XM WAN slots, IOS 2'
+
+>>> string1 = "o E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2"
+>>> string1
+'o E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2'
+>>> string1.find("9")
+14
+>>> string1[5:15]
+'10.110.8.9'
+
+
+>>> string1[5:]
+'10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2'
+>>> 
+
+
+>>> string1[:10]
+'o E2 10.11'
+
+>>> string1[:]
+'o E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2'
+>>> 
+
+>>> string1[-1]
+'2'
+>>> string1[-2]
+'t'
+
+>>> string1[-9:-1]
+'Ethernet'
+
+>>> string1[-5:]
+'rnet2'
+
+
+#Booleans - logical operations
+(1 == 1) and (2 == 2) #result is True; AND means that both operands should be True in order to get the expression evaluated as True
+ 
+(1 == 1) or (2 == 2) #result is True; when using OR, it is enough if only one expression is True, in order to have True as the final result
+ 
+not(1 == 1) #result is False; using the NOT operator means denying an expression, in this case denying a True expression
+ 
+not(1 == 2) #result is True; using the NOT operator means denying an expression, in this case denying a False expression
+ 
+None, 0, 0.0, 0L, 0j, empty string, empty list, empty tuple, empty dictionary #these values always evaluate to False
+ 
+bool(None) #returns False; function that evaluates values and expressions
+ 
+bool(0) #returns False; function that evaluates values and expressions
+ 
+bool(2) #returns True; function that evaluates values and expressions
+ 
+bool("router") #returns True; function that evaluates values and expressions
+
