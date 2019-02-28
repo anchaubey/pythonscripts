@@ -1,109 +1,156 @@
->>> my_string = '''this\
+#Defining a string on multiple lines, using triple quotes and the line continuation character ( \ )
+my_string = '''this\
 is\
 my\
 first\
 string'''
-
->>> a = "Cisco Switch"
->>> a.index("i")
-1
-
+ 
+#Strings - indexing
+a = "Cisco Switch"
+ 
+a.index("i")
+ 
+#Strings - character count
+a = "Cisco Switch"
+ 
 a.count("i")
+ 
+#Strings - finding a character
+a = "Cisco Switch"
+ 
 a.find("sco")
+ 
+#Strings - converting the case
+a = "Cisco Switch"
+ 
+a.lower() #lowercase
+ 
+a.upper() #uppercase
+ 
+#Strings - checking whether the string starts with a character
+a = "Cisco Switch"
+ 
+a.startswith("C")
+ 
+#Strings - checking whether the string ends with a character
+a = "Cisco Switch"
+ 
+a.endswith("h")
+ 
+#Strings - removing a character from the beginning and the end of a string
+a = "   Cisco Switch   "
+ 
+a.strip() #remove whitespaces
+ 
+b = "$$$Cisco Switch$$$"
+ 
+b.strip("$") #remove a certain character
+ 
+#Strings - removing all occurences of a character from a string
+a = "   Cisco Switch   "
+ 
+a.replace(" ", "") #replace each space character with the absence of any character
+ 
+#Strings - splitting a string by specifying a delimiter; the result is a list
+a = "Cisco,Juniper,HP,Avaya,Nortel" #the delimiter is a comma
+ 
+a.split(",")
+ 
+#Strings - inserting a character in between every two characters of the string / joining the characters by using a delimiter
+a = "Cisco Switch"
+ 
+"_".join(a)
+ 
+#Additional methods (source: https://www.tutorialspoint.com/python3/python_strings.htm) 
+ 
+capitalize()
+#Capitalizes first letter of string.
+ 
+lstrip()
+#Removes all leading whitespace in string.
+ 
+rstrip()
+#Removes all trailing whitespace of string.
+ 
+swapcase()
+#Inverts case for all letters in string.
+ 
+title()
+#Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
+ 
+isalnum()
+#Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.
+ 
+isalpha()
+#Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.
+ 
+isdigit()
+#Returns true if string contains only digits and false otherwise.
+ 
+islower()
+#Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.
+ 
+isnumeric()
+#Returns true if a unicode string contains only numeric characters and false otherwise.
+ 
+isspace()
+#Returns true if string contains only whitespace characters and false otherwise.
+ 
+istitle()
+#Returns true if string is properly "titlecased" and false otherwise.
+ 
+isupper()
+#Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.
+ 
+#Strings - concatenating two or more strings
+a = "Cisco"
+b = "2691"
+ 
+a + b
+ 
+#Strings - repetition / multiplying a string
+a = "Cisco"
+ 
+a * 3
+ 
+#Strings - checking if a character is or is not part of a string
+a = "Cisco"
+ 
+"o" in a
+ 
+"b" not in a
+ 
+#Strings - formatting v1
+"Cisco model: %s, %d WAN slots, IOS %f" % ("2600XM", 2, 12.4)
+"Cisco model: %s, %d WAN slots, IOS %.f" % ("2600XM", 2, 12.4)
+"Cisco model: %s, %d WAN slots, IOS %.1f" % ("2600XM", 2, 12.4)
+"Cisco model: %s, %d WAN slots, IOS %.2f" % ("2600XM", 2, 12.4)
+ 
+#Strings - formatting v2
+"Cisco model: {}, {} WAN slots, IOS {}".format("2600XM", 2, 12.4)
+"Cisco model: {0}, {1} WAN slots, IOS {2}".format("2600XM", 2, 12.4)
+ 
+#Strings - slicing
+string1 = "O E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2"
+ 
+string1[5:15] #slice starting at index 5 up to, but NOT including, index 15; so index 14 represents the last element in the slice
+string1[5:] #slice starting at index 5 up to the end of the string
+string1[:10] #slice starting at the beginning of the string up to, but NOT including, index 10
+string1[:] #returns the entire string
+string1[-1] #returns the last character in the string
+string1[-2] #returns the second to last character in the string
+string1[-9:-1] #extracts a certain substring using negative indexes
+string1[-5:] #returns the last 5 characters in the string
+string1[:-5] #returns the string minus its last 5 characters
+string1[::2] #adds a third element called step; skips every second character of the string
+string1[::-1] #returns string1's elements in reverse order
 
 
->>> a.lower()
-'cisco switch'
->>> a.upper()
-'CISCO SWITCH'
-
->>> a.startswith("C")
-True
->>> a.endswith("G")
-False
-
->>> c.split("$")
-['', '', '', 'Cisco Switch', '', '', '']
->>> c.strip("$")
-'Cisco Switch'
-
->>> b = '   Cisco Switch  '
->>> b
-'   Cisco Switch  '
->>> b.replace(" ","")
-'CiscoSwitch'
-
->>> d = "Cisco,Juniper,HP,Avaya,Nortel"
->>> d.split(",")
-['Cisco', 'Juniper', 'HP', 'Avaya', 'Nortel']
+==========================================================================================================================================
 
 
->>> a
-'Cisco Switch'
->>> "_".join(a)
-'C_i_s_c_o_ _S_w_i_t_c_h'
->>> 
 
->>> x = "Cisco"
->>> y = " Swtich"
->>> x + y
-'Cisco Swtich'
->>> x * 3
-'CiscoCiscoCisco'
-
->>> "o" in x
-
->>> "b" not in x
-True
->>> 
-
->>> "Cisco model: %s, %d WAN slots, IOS %f" % ("2600XM", 2, 12.4)
-'Cisco model: 2600XM, 2 WAN slots, IOS 12.400000'
-
->>> "Cisco model: %s, %d WAN slots, IOS %.2f" % ("2600XM", 2, 12.4)
-'Cisco model: 2600XM, 2 WAN slots, IOS 12.40'
-
-
->>> "Cisco model: %s, %d WAN slots, IOS %.f" % ("2600XM", 2, 12.4)
-'Cisco model: 2600XM, 2 WAN slots, IOS 12'
-
->>> "Cisco model: {}, {} WAN slots, IOS {}".format("2600XM", 2, 12.4)
-'Cisco model: 2600XM, 2 WAN slots, IOS 12.4'
-
->>> "Cisco model: {2}, {0} WAN slots, IOS {1}".format("2600XM", 2, 12.4)
-'Cisco model: 12.4, 2600XM WAN slots, IOS 2'
-
->>> string1 = "o E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2"
->>> string1
-'o E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2'
->>> string1.find("9")
-14
->>> string1[5:15]
-'10.110.8.9'
-
-
->>> string1[5:]
-'10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2'
->>> 
-
-
->>> string1[:10]
-'o E2 10.11'
-
->>> string1[:]
-'o E2 10.110.8.9 [160/5] via 10.119.254.6, 0:01:00, Ethernet2'
->>> 
-
->>> string1[-1]
-'2'
->>> string1[-2]
-'t'
-
->>> string1[-9:-1]
-'Ethernet'
-
->>> string1[-5:]
-'rnet2'
+Booleans and Logical Operator
 
 
 #Booleans - logical operations
@@ -124,4 +171,3 @@ bool(0) #returns False; function that evaluates values and expressions
 bool(2) #returns True; function that evaluates values and expressions
  
 bool("router") #returns True; function that evaluates values and expressions
-
