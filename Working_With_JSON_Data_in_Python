@@ -1,0 +1,51 @@
+import json
+
+a = {
+    'name': 'max',
+    'age': 22,
+    'marks': [90, 50, 80, 40],
+    'pass': True,
+    'objects': {'color':('red','blue')
+                }
+}
+#we can call json.dumps() to call some python value to json value
+
+print(json.dumps(a, indent=4))
+
+
+
+
+import json
+
+a = {
+    'name': 'max',
+    'age': 22,
+    'marks': [90, 50, 80, 40],
+    'pass': True,
+    'objects': {'color':('red','blue')
+                }
+}
+#we can call json.dumps() to call some python value to json value
+
+print(json.dumps(a, indent=2, sort_keys=True))
+
+
+
+import json
+
+a = {
+    'name': 'max',
+    'age': 22,
+    'marks': [90, 50, 80, 40],
+    'pass': True,
+    'objects': {'color':('red','blue')
+                }
+}
+#we can call json.dumps() to call some python value to json value
+
+with open('C://Users//ankit//Desktop//demo,json', 'w') as fh:
+    fh.write(json.dumps(a, indent=2, sort_keys=True))
+
+
+
+
