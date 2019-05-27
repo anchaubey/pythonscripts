@@ -1,0 +1,8 @@
+# How to remove trailing spaces from list of server in file output.
+
+file = open('C:\\Users\\E211568\\Desktop\\problem.txt','r')
+for line in file.readlines():
+    devices = line.rstrip('\n')
+    print(devices)
+    
+file.close() 
