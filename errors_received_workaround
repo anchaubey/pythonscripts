@@ -1,0 +1,7 @@
+SSHClient Fails to use password authentication when local keychain exists #391
+
+add look_for_keys=False
+
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect("remotehost", username="myuser",password="mypassword", look_for_keys=False)
