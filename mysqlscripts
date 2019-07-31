@@ -1,0 +1,64 @@
+This script saves the fetched sql data in dictionary format as well as updates the last column value by 1
+
+#!/usr/bin/python
+
+import locale
+import MySQLdb
+import MySQLdb.cursors
+
+locale.setlocale(locale.LC_ALL, 'en_GB.UTF-8')
+
+db = MySQLdb.connect(host="localhost",
+                     user="ankit",
+                      passwd="redhat",
+                      db="employee_oss", cursorclass=MySQLdb.cursors.DictCursor)
+cur = db.cursor()
+
+cur.execute("select Nme,rating from employee_oss_table;")
+
+dict = {}
+
+for row in cur.fetchall():
+    name = row['Nme']
+    rating1 = row['rating']
+    dict.update({name:rating1})
+
+for name,rating1 in dict.items():
+    sql="UPDATE employee_oss_table SET rating = {} WHERE Nme='{}'".format(rating1 +1,name)
+   # Execute the SQL command
+    cur.execute(sql)
+   # Commit your changes in the database
+    db.commit()
+   # Rollback in case there is any error
+# disconnect from server
+db.close()
+print(dict)
+
+==============================================================================================
+
+
+only updates the last column value
+
+#!/usr/bin/python
+
+import MySQLdb
+
+# Open database connection
+db = MySQLdb.connect("localhost","root","redhat","employee_oss" )
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+# Prepare SQL query to UPDATE required records
+sql = "select Nme,rating from employee_oss_table"
+try:
+   # Execute the SQL command
+   save = cursor.execute(sql)
+   # Commit your changes in the database
+except:
+   # Rollback in case there is any error
+   db.rollback()
+
+# disconnect from server
+db.close()
+print(save)
